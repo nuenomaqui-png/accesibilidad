@@ -1,0 +1,330 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Accesibilidad Real</title>
+  <!-- Tailwind CSS desde CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Meta descriptivo -->
+  <meta name="description" content="Accesibilidad Real: verificación automatizada con IA de accesibilidad en rutas, playas, hoteles y ciudades. Información fiable para familias y personas con movilidad reducida."/>
+
+  <!-- Paleta de colores base -->
+  <style>
+    :root{
+      --brand-1: #0ea5e9;  /* sky-500 */
+      --brand-2: #1f2937;  /* gray-800 */
+      --brand-3: #22c55e;  /* green-500 */
+    }
+    /* Fondo con superposición para hero */
+    .hero-bg{
+      background-image: url('hombre-de-tiro-medio-con-binoculares.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    .overlay{
+      background: linear-gradient(180deg, rgba(15,23,42,0.55), rgba(15,23,42,0.35));
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-white/90 backdrop-blur shadow-sm sticky top-0 z-50" aria-label="Cabecera principal">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-0.1 flex items-center justify-between">
+      <!-- Logo y nombre -->
+      <a href="#" class="flex items-center space-x-0.2">
+        <img src="logo.png" alt="Accesibilidad Real - Logotipo" class="h-40 w-auto"/>
+        <span class="text-0.5 font-bold text-gray-900">Accesibilidad Real</span>
+      </a>
+
+      <!-- Navegación -->
+      <nav class="hidden md:block" aria-label="Navegación principal">
+        <ul class="flex items-center space-x-8 font-medium">
+          <li><a href="#valor" class="text-gray-700 hover:text-sky-600">Propuesta de valor</a></li>
+          <li><a href="#servicios" class="text-gray-700 hover:text-sky-600">¿A quién ayudamos?</a></li>
+          <li><a href="#contacto" class="text-gray-700 hover:text-sky-600">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <!-- Botones de redes sociales (Header) -->
+      <div class="hidden md:flex items-center space-x-3" aria-label="Redes sociales">
+        <!-- Facebook -->
+        <a href="#" aria-label="Facebook" class="p-2 rounded-full border border-gray-200 hover:bg-gray-100 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#1877F2]" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M22 12.06C22 6.48 17.52 2 11.94 2S2 6.48 2 12.06c0 5 3.66 9.14 8.44 9.94v-7.04H8.1V12.06h2.34v-1.9c0-2.3 1.37-3.57 3.47-3.57.99 0 2.03.18 2.03.18v2.23h-1.14c-1.12 0-1.47.7-1.47 1.42v1.64h2.5l-.4 2.9h-2.1v7.04C18.34 21.2 22 17.06 22 12.06z"/>
+          </svg>
+        </a>
+        <!-- Instagram -->
+        <a href="#" aria-label="Instagram" class="p-2 rounded-full border border-gray-200 hover:bg-gray-100 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-pink-600" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm0 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H7zm5 3a5 5 0 110 10 5 5 0 010-10zm6.5-.75a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0z"/>
+          </svg>
+        </a>
+        <!-- LinkedIn -->
+        <a href="#" aria-label="LinkedIn" class="p-2 rounded-full border border-gray-200 hover:bg-gray-100 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#0A66C2]" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8.5h4V23h-4V8.5zm7.5 0h3.84v1.98h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V23h-3.99v-6.53c0-1.56-.03-3.57-2.18-3.57-2.18 0-2.52 1.7-2.52 3.45V23H8V8.5z"/>
+          </svg>
+        </a>
+        <!-- X / Twitter -->
+        <a href="#" aria-label="Twitter" class="p-2 rounded-full border border-gray-200 hover:bg-gray-100 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-black" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19.633 2H15.72l-4.69 6.79L6.49 2H1l7.8 11.25L1.366 22H5.28l5.11-7.41L17.51 22H23l-8.22-11.86L23 2h-3.367z"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Botón CTA (móvil) -->
+      <a href="#contacto" class="md:hidden inline-flex items-center px-4 py-2 rounded-lg bg-sky-600 text-white font-semibold hover:bg-sky-700">Contactar</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative hero-bg">
+    <div class="overlay">
+      <div class="max-w-5xl mx-auto px-6 py-24 md:py-36 text-center text-white">
+        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight">Accesibilidad Real para experiencias inclusivas</h1>
+        <p class="mt-6 text-lg md:text-xl text-white/90">
+          Verificamos con IA la accesibilidad de rutas, playas, transportes, hoteles y ciudades inteligentes.
+          Información fiable para familias y personas con movilidad reducida.
+        </p>
+        <div class="mt-10 flex flex-wrap justify-center gap-4">
+          <a href="#contacto" class="px-6 py-3 rounded-lg bg-green-500 hover:bg-green-600 font-semibold shadow">
+            Solicitar información
+          </a>
+          <a href="#valor" class="px-6 py-3 rounded-lg bg-white/10 hover:bg-white/20 border border-white/30 font-semibold">
+            Conoce cómo funciona
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Propuesta de valor -->
+  <section id="valor" class="max-w-7xl mx-auto px-6 py-16">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Nuestra propuesta de valor</h2>
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div class="space-y-5">
+        <div>
+          <h3 class="text-xl font-semibold">✔ Verificación real y automatizada</h3>
+          <p>La IA analiza fotos, descripciones y planos para confirmar accesibilidad de manera objetiva.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold">✔ Confianza y transparencia</h3>
+          <p>Evitamos información engañosa en webs y folletos con evidencias verificables.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold">✔ Escalabilidad global</h3>
+          <p>Aplicable a hoteles, rutas, parques y ciudades inteligentes en cualquier país.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold">✔ Integración con tendencias</h3>
+          <p>Alineado con normativas <strong>UNE/ISO</strong> y mejores prácticas de turismo inclusivo.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold">✔ Conexión con otras soluciones</h3>
+          <p>Generación de itinerarios <strong>GPX</strong> y calendarios de ocio accesible.</p>
+        </div>
+      </div>
+      <div class="rounded-xl overflow-hidden shadow-lg">
+        <img src="mujer-en-silla-de-ruedas-mirando-el-mapa-exterior.jpg" alt="Visitante revisando el mapa en una zona urbana accesible" class="w-full h-full object-cover"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- Público objetivo -->
+  <section id="servicios" class="bg-sky-50 py-16">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">¿A quién ayudamos?</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white rounded-xl shadow p-6 hover:shadow-md transition">
+          <h3 class="text-lg font-semibold mb-2">Familias con niños</h3>
+          <p>Experiencias turísticas seguras y adaptadas, con datos claros de accesibilidad.</p>
+        </div>
+        <div class="bg-white rounded-xl shadow p-6 hover:shadow-md transition">
+          <h3 class="text-lg font-semibold mb-2">Personas con diversidad funcional</h3>
+          <p>Información precisa y actualizada sobre accesos, itinerarios y servicios.</p>
+        </div>
+        <div class="bg-white rounded-xl shadow p-6 hover:shadow-md transition">
+          <h3 class="text-lg font-semibold mb-2">Hoteles y operadores turísticos</h3>
+          <p>Auditorías de accesibilidad y recomendaciones para cumplir normativas.</p>
+        </div>
+        <div class="bg-white rounded-xl shadow p-6 hover:shadow-md transition">
+          <h3 class="text-lg font-semibold mb-2">Administraciones y destinos</h3>
+          <p>Mejora continua de accesibilidad y reporte contra estándares UNE/ISO.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galería (opcional: muestra algunas de las imágenes disponibles) -->
+  <section class="max-w-7xl mx-auto px-6 py-12">
+    <div class="grid md:grid-cols-3 gap-6">
+      <img src="accessibility-inclusion.jpg" alt="Detalle de pasamanos y rampa accesible en entorno urbano" class="rounded-xl w-full h-64 object-cover shadow"/>
+      <img src="vista-posterior-de-la-mujer-en-silla-de-ruedas-en-la-playa.jpg" alt="Acceso a la playa con pasarela y mar de fondo" class="rounded-xl w-full h-64 object-cover shadow"/>
+      <img src="persona-que-disfruta-del-tiempo-en-la-naturaleza.jpg" alt="Paseo por parque accesible entre hojas otoñales" class="rounded-xl w-full h-64 object-cover shadow"/>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="max-w-4xl mx-auto px-6 py-16">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">Contáctanos</h2>
+
+    <!-- Mensajes de estado -->
+    <div id="form-status" class="hidden mb-6 rounded-lg p-4"></div>
+
+    <!-- FORMULARIO -->
+    <!-- 1) Sustituye el valor de data-endpoint por tu URL real (ejemplos al final). -->
+    <form id="contact-form"
+          class="bg-white shadow p-6 md:p-8 rounded-xl space-y-5"
+          data-endpoint="TU_ENDPOINT_REAL_AQUI"
+          aria-label="Formulario de contacto">
+      <div class="grid md:grid-cols-2 gap-5">
+        <div>
+          <label for="nombre" class="block font-semibold mb-2">Nombre</label>
+          <input id="nombre" name="nombre" type="text" required
+                 class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-sky-500"/>
+        </div>
+        <div>
+          <label for="email" class="block font-semibold mb-2">Email</label>
+          <input id="email" name="email" type="email" required
+                 value="exemple@gmail.com"
+                 class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-sky-500"/>
+        </div>
+      </div>
+
+      <div>
+        <label for="telefono" class="block font-semibold mb-2">Teléfono (opcional)</label>
+        <input id="telefono" name="telefono" type="tel"
+               class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-sky-500"/>
+      </div>
+
+      <div>
+        <label for="mensaje" class="block font-semibold mb-2">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" rows="5" required
+                  class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-sky-500"></textarea>
+      </div>
+
+      <!-- Preferencias / tipo de servicio -->
+      <div>
+        <label for="servicio" class="block font-semibold mb-2">¿Qué necesitas?</label>
+        <select id="servicio" name="servicio"
+                class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-sky-500">
+          <option value="auditoria">Auditoría de accesibilidad</option>
+          <option value="ruta">Verificación de rutas / naturaleza / playas</option>
+          <option value="hotel">Evaluación para hotel u operador</option>
+          <option value="administracion">Proyecto para administración / destino inteligente</option>
+          <option value="otro">Otro</option>
+        </select>
+      </div>
+
+      <button type="submit"
+              class="w-full bg-sky-600 hover:bg-sky-700 text-white font-semibold py-3 rounded-lg">
+        Enviar solicitud
+      </button>
+
+      <p class="text-sm text-gray-500 text-center mt-2">
+        Al enviar, aceptas nuestra política de privacidad y el tratamiento de tus datos para dar respuesta a tu solicitud.
+      </p>
+    </form>
+  </section>
+
+  <!-- Footer con redes sociales -->
+  <footer class="bg-gray-900 text-gray-300">
+    <div class="max-w-7xl mx-auto px-6 py-10 grid md:grid-cols-3 gap-8 items-start">
+      <div>
+        <div class="flex items-center space-x-3 mb-3">
+          <img src="logo.png" alt="Accesibilidad Real - Logotipo" class="h-8 w-auto"/>
+          <span class="text-lg font-bold text-white">Accesibilidad Real</span>
+        </div>
+        <p class="text-sm">
+          Verificación automatizada con IA para una accesibilidad fiable en destinos y servicios.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-white font-semibold mb-3">Contacto</h3>
+        <p class="text-sm">Email: <a href="mailto:exemple@gmail.com" class="text-sky-400 hover:text-sky-300">exemple@gmail.com</a></p>
+      </div>
+
+      <div>
+        <h3 class="text-white font-semibold mb-3">Síguenos</h3>
+        <div class="flex items-center gap-3">
+          <a href="#" aria-label="Facebook" class="p-2 rounded-full bg-white/10 hover:bg-white/20 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#1877F2]" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M22 12.06C22 6.48 17.52 2 11.94 2S2 6.48 2 12.06c0 5 3.66 9.14 8.44 9.94v-7.04H8.1V12.06h2.34v-1.9c0-2.3 1.37-3.57 3.47-3.57.99 0 2.03.18 2.03.18v2.23h-1.14c-1.12 0-1.47.7-1.47 1.42v1.64h2.5l-.4 2.9h-2.1v7.04C18.34 21.2 22 17.06 22 12.06z"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="Instagram" class="p-2 rounded-full bg-white/10 hover:bg-white/20 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-pink-600" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm0 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H7zm5 3a5 5 0 110 10 5 5 0 010-10zm6.5-.75a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0z"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="LinkedIn" class="p-2 rounded-full bg-white/10 hover:bg-white/20 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#0A66C2]" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8.5h4V23h-4V8.5zm7.5 0h3.84v1.98h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V23h-3.99v-6.53c0-1.56-.03-3.57-2.18-3.57-2.18 0-2.52 1.7-2.52 3.45V23H8V8.5z"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="Twitter" class="p-2 rounded-full bg-white/10 hover:bg-white/20 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19.633 2H15.72l-4.69 6.79L6.49 2H1l7.8 11.25L1.366 22H5.28l5.11-7.41L17.51 22H23l-8.22-11.86L23 2h-3.367z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-white/10 text-center text-sm py-6">
+      &copy; 2025 Accesibilidad Real. Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <!-- JS: envío del formulario (Fetch). Cambia data-endpoint por tu URL real) -->
+  <script>
+    const form = document.getElementById('contact-form');
+    const statusBox = document.getElementById('form-status');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const endpoint = form.getAttribute('data-endpoint');
+      if (!endpoint || endpoint === 'TU_ENDPOINT_REAL_AQUI') {
+        statusBox.className = 'mb-6 rounded-lg p-4 bg-red-50 text-red-700';
+        statusBox.textContent = 'Configura el endpoint real del formulario antes de enviar.';
+        statusBox.hidden = false;
+        return;
+      }
+
+      const data = {
+        nombre: document.getElementById('nombre').value,
+        email: document.getElementById('email').value,
+        telefono: document.getElementById('telefono').value,
+        mensaje: document.getElementById('mensaje').value,
+        servicio: document.getElementById('servicio').value
+      };
+
+      try {
+        const resp = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+
+        if (!resp.ok) throw new Error('Error en el envío');
+
+        statusBox.className = 'mb-6 rounded-lg p-4 bg-green-50 text-green-700';
+        statusBox.textContent = '¡Gracias! Hemos recibido tu solicitud y te contactaremos pronto.';
+        statusBox.hidden = false;
+        form.reset();
+      } catch (err) {
+        statusBox.className = 'mb-6 rounded-lg p-4 bg-yellow-50 text-yellow-700';
+        statusBox.textContent = 'No se pudo enviar el formulario. Revisa tu conexión o el endpoint.';
+        statusBox.hidden = false;
+      }
+    });
+  </script>
+</body>
+</html>
